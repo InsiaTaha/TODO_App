@@ -11,7 +11,8 @@ const [UName,setUName]=useState("");
 const [Password,setPassword]=useState("");
 const dispatch=useDispatch()
 
-const handleChange=()=>{
+const handleChange=(e)=>{
+    e.preventDefault();
     dispatch(addUserAsync({FName,LName,UName,Password,TodoList:[]}))
       
 

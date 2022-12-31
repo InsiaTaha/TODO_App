@@ -43,8 +43,10 @@ export default function Todo(){
                             <ul className="d-flex flex-column-reverse todo-list">
                             {currentUser.TodoList.map((todo, index) =>
                                 <li id={index} key={index}>
-                                  {index}
-                                    {todo} <button onClick={()=>deleteItems(index)}>del</button>
+                                    {todo}
+                                    <button type="button" onClick={()=>deleteItems(index)} class="close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button> 
                                 </li>
                             )}
                             </ul>

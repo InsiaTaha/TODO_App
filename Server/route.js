@@ -18,6 +18,7 @@ route.post('/getuser', (req, res) => {
 route.post('/postuser', (req, res) => {
     var userData = JSON.parse(fs.readFileSync('api.json'));
     var bool = checkUnique(userData, req.body);
+    console.log('user added')
     if (!bool) {
         userData.push(req.body);
         fs.writeFileSync('api.json', JSON.stringify(userData));
